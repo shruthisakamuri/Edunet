@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=c, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Personal Portfolio Design by Shruthi Sakamuri</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Nunito', sans-serif;
+  
+  }
+  
+  :root {
+    --bg-color: #0f0e0c;
+    --snd-bf-color: #f70f1a;
+    --text-color: #fff;
+    --main-color: #fc129a;
+  }
+  
+  html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+  }
+  
+  body{
+    background: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+  }
+  
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+    cursor: default;
+  }
+  
+  .navbar a{
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 700;
+  }
+  
+  .navbar a:hover,
+  .navbar a.active{
+    color: var(--main-color);
+  }
+  
+  #menu-icon{
+    font-size: 1.6rem;
+    color: var(--text-color);
+    display: none;
+  }
+  
+  .home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .home-content h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+  }
+  
+  .home-content h3:nth-of-type(2){
+    margin-bottom: 2rem;
+  }
+  
+  span{
+    color: var(--main-color);
+  }
+  
+  .home-content h1{
+    font-size: 5.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  
+  .home-img img{
+    width: 25vw;
+    animation: floatImage 4s ease-in-out infinite;
+  }
+  
+  @keyframes floatImage{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-2.4rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
+  }
+  
+  .home-content p{
+    font-size: 1.6rem;
+  }
+  
+  .social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+  }
+  
+  .social-media a:hover{
+    background: var(--main-color);
+    color: var(--snd-bf-color);
+    box-shadow: 0 0 1rem var(--main-color);
+  }
+  
+  .btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+  }
+  
+  .btn:hover{
+    box-shadow:none;
+  }
+  
+  .about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: var(--snd-bf-color);
+  }
+  
+  .about-img img{
+    width: 35vw;
+  }
+  
+  .heading{
+    text-align: center;
+    font-size: 4.5rem;
+  }
+  
+  .about-content h2{
+    text-align: left;
+    line-height: 1.2;
+  }
+  
+  .about-content h3{
+    font-size: 2.6rem;
+  }
+  
+  .about-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+  }
+  
+  .services h2{
+    margin-bottom: 5rem;
+  }
+  
+  .services-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .services-container .services-box{
+    flex: 1 1 30rem;
+    background: var(--snd-bf-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+  }
+  
+  .services-container .services-box:hover{
+    border-color: var(--main-color);
+    transform: scale(1.02);
+  }
+  
+  .services-box i{
+    font-size: 7rem;
+    color: var(--main-color);
+  }
+  
+  .services-box h3{
+    font-size: 2.6rem;
+  }
+  
+  .services-box p{
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+  }
+  
+  .portfolio {
+    background: var(--snd-bf-color);
+  }
+  .portfolio h2{
+    margin-bottom: 4rem;
+  }
+  
+  .portfolio-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+  }
+  
+  .portfolio-container .portfolio-box{
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .portfolio-box img{
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0.7;
+  }
+  
+  .portfolio-box:hover img{
+     transform: scale(1.1);
+  }
+  
+  .portfolio-box .portfolio-layer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 14, 14, 0.1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+  }
+  
+  .portfolio-box:hover .portfolio-layer{
+    transform: translateY(0);
+  }
+  
+  .portfolio-layer h4{
+    font-size: 3rem;
+  }
+  
+  .portfolio-layer p{
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+  }
+  
+  .portfolio-layer a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+  }
+  
+  .portfolio-layer a i{
+    font-size: 2rem;
+    color: var(--snd-bf-color);
+  }
+  
+  .contact h2{
+    margin-bottom: 3rem;
+  }
+  
+  .contact form{
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .contact form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .contact form .input-box input,
+  .contact form textarea{
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--snd-bf-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+  }
+  
+  .contact form .input-box input{
+    width: 49%;
+  }
+  
+  .contact form textarea{
+    resize: none;
+  }
+  
+  .contact form .btn{
+    margin-top: 2rem;
+    cursor: pointer;
+  }
+  
+  .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--snd-bf-color);
+  }
+  
+  .footer-text{
+    font-size: 1.6rem;
+  }
+  
+  footer-iconTop{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem 1rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+  }
+  
+  .foote-iconTop a:hover{
+    box-shadow: 0 0 1rem var(--main-color);
+  }
+  
+  .footer-iconTop a i{
+    font-size: 2.4rem;
+    color: var(--snd-bf-color);
+  }
+  
+  @media (max-width: 1200px){
+    html{
+        font-size: 55%;
+    }
+  }
+  
+  @media (max-width: 991px){
+    .header{
+        padding: 2rem 3%;
+    }
+  
+    .section{
+        padding: 10rem 3%;
+    }
+  
+    .services{
+        padding: 7rem;
+    }
+  
+    .portfolio{
+        padding-bottom: 7rem;
+    }
+  
+    .contact{
+        min-height: auto;
+    }
+  
+    .footer{
+        padding: 2rem  3%;
+    }
+  }
+  
+  @media (max-width: 768px){
+    #menu-icon{
+        display: block;
+    }
+  
+    .home{
+        flex-direction: column;
+    }
+  
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+  
+    .home-content h1{
+        font-size: 5rem;
+    }
+  
+    .home-img img{
+        width: 90vw;
+        margin-top: 4rem;
+    }
+  
+    r
+    .about{
+         flex-direction: column;
+    }
+    .about-img img{
+        width: 90vw;
+        margin-top: 4rem;
+    }
+  
+    .services h2{
+        margin-bottom: 3rem;
+    }
+  
+    .portfolio h2{
+        margin-bottom: 3rem;
+    }
+  
+    .portfolio-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Student Portfolio</a>
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#services">skills</a>
+            <a href="#portfolio">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hi,This is </h3>
+            <h1>Shruthi Sakamuri</h1>
+            <h3>And I'm a <span>Student at SRMAP University</span></h3>
+            <p>Developed responsive and visually appealing user interfaces for a 2  projects using HTML, CSS, and JavaScript.Collaborated with cross-functional teams to translate design mockups and wireframes into interactive web applications.Optimized website performance through code refactoring and browser compatibility testing, resulting in increased user engagement.Contributed to version control processes using Git, ensuring code integrity and facilitating team collaboration.Actively participated in code reviews, providing constructive feedback and implementing best practices for maintainable and scalable code.Stayed updated on emerging trends and technologies in front-end development through continuous learning and self-improvement initiatives.</p>
+            <div class="social-media">
+                <a href="https://www.instagram.com/shruthi_saka/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/shruthi-sakamuri-52a170259/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/shruthisakamuri"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <a href="../internship/shruthi resume april.pdf" class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="../internship/shruthi photo 3 (1)_page-0001.jpg" alt="">
+        </div>
+    </section>
+
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="#" alt="">
+        </div>
+        <div class="about-content">
+            <h2 class="heading">ABOUT <span>Me</span></h2>
+            <h3>Frontend Developer</h3>
+            <p>Skilled Front-end Developer with 3 months of experience in designing, developing and maintaining front-end web applications.Achieved measurable success in increasing page load speeds by 20% which lead to an increase in website conversion rates.Led the implementation of new front-end development which resulted in a 15% reduction in development time and a 20% increase in website performance.Adept in collaborating with cross-functional teams and delivering projects on-time and on-budget.</p>
+            <a href="#" class="btn">Read more</a>
+        </div>
+    </section>
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Educatioanl <span>Details</span></h2>
+
+        <div class="portfolio-container">
+            
+            <div class="portfolio-box">
+                <img src="data:image/jpeg;base64,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" width="400" height="210" alt="">
+                <div class="portfolio-layer">
+                    <h4>High School 10th and 12th</h4>
+                    <p>Sri Vivekananda Central School</p>
+                    <p>(2019-2022)</p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="https://media.licdn.com/dms/image/C4D0BAQFVkDMh7oXtqw/company-logo_200_200/0/1631373402802?e=2147483647&v=beta&t=Oqn2ybura-pBoBvWwZC9_9dzOd0_5GSqGnIbsGrAqZ0" width="400" height="210" alt="">
+                <div class="portfolio-layer">
+                    <h4>Under Graduation</h4>
+                    <p>SRMAP</p>
+                    <p>(2022-2026)</p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+
+            
+
+            
+        </div>
+    </section>
+    <section class="services" id="services">
+        <h2 class="heading">My <span>Skills</span></h2>
+        <div class="services-container">
+            <div class="services-box">
+                <i class="fa-solid fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Skilled Front-end Developer with 3 months of experience in designing, developing and maintaining front-end web applications.Achieved measurable success in increasing page load speeds by 20% which lead to an increase in website conversion rates.Led the implementation of new front-end development which resulted in a 15% reduction in development time and a 20% increase in website performance.Adept in collaborating with cross-functional teams and delivering projects on-time and on-budget.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+                <i class="fa-solid fa-cloud"></i>
+                <h3>Cloud Computing</h3>
+                <p>Skilled Front-end Developer with 3 months of experience in designing, developing and maintaining front-end web applications.Achieved measurable success in increasing page load speeds by 20% which lead to an increase in website conversion rates.Led the implementation of new front-end development which resulted in a 15% reduction in development time and a 20% increase in website performance.Adept in collaborating with cross-functional teams and delivering projects on-time and on-budget.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+                <i class="fa-brands fa-python"></i>
+                <h3>Python Programming</h3>
+                <p>Developed and maintained backend services for 1 project using Python and Django framework, ensuring scalability, reliability, and performance.Implemented RESTful APIs to facilitate seamless communication between frontend and backend systems, resulting in improved user experience and application functionality.Collaborated with cross-functional teams including designers and frontend developers to translate project requirements into technical solutions, ensuring alignment with business objectives.Designed automated testing procedures using unittest and pytest, reducing manual testing efforts and enhancing software reliability.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+
+    </section>
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Project</span></h2>
+
+        <div class="portfolio-container">
+            
+            <div class="portfolio-box">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/OD/DF/RP/23999962/c-language-500x500.jpg" width="400" height="210" alt="">
+                <div class="portfolio-layer">
+                    <h4>C programming</h4>
+                    <p>Quiz game </p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="https://media.licdn.com/dms/image/D4D12AQF2UVgSmBI74w/article-cover_image-shrink_720_1280/0/1675012140861?e=2147483647&v=beta&t=EpJ1GGBVvpuaK2UT9LWSON6unOu1v_D2sic4qH4_d1Q" width="400" height="210" alt="">
+                <div class="portfolio-layer">
+                    <h4>Data Structures</h4>
+                    <p>Airline Booking system</p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="https://media.licdn.com/dms/image/D4D12AQF2UVgSmBI74w/article-cover_image-shrink_720_1280/0/1675012140861?e=2147483647&v=beta&t=EpJ1GGBVvpuaK2UT9LWSON6unOu1v_D2sic4qH4_d1Q" width="400" height="210" alt="">
+                <div class="portfolio-layer">
+                    <h4>Data Structures</h4>
+                    <p>Employee Management System</p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="https://training.digigrowhub.in/wp-content/uploads/2021/02/do-coding-of-any-program-by-c-plus-plus-perfectly-and-within-time.jpg" width="400" height="210" alt="">
+                <div class="portfolio-layer">
+                    <h4>c++ programming using OOPS</h4>
+                    <p>CGPA Calculator</p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="https://static.javatpoint.com/fullformpages/images/dbms-full-form.png" width="400" height="210" alt="">
+                <div class="portfolio-layer">
+                    <h4>DBMS</h4>
+                    <p>Library Management System</p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="https://www.ibrandox.com/IbrandoxBackEndImage/BlogImage/af4640e4e99343b296275421ecd95de8.jpg" width="400" height="210" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Clothing Website</p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>me</span></h2>
+
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Full name">
+                <input type="email" placeholder="Email Address">
+            </div>
+
+            <div class="input-box">
+                <input type="number" placeholder="Mobile Number">
+                <input type="text" placeholder="Email subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Meassage"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by @shruthi sakamuri | All Rights Reserved. </p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#home"><i class="fa-solid fa-angle-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="JS/main.js"></script>
+</body>
+
+</html>
